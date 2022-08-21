@@ -7,7 +7,7 @@
     <title>Vanilla Axios</title>
     <style>
       body {
-        background-color: #673ab7;
+        background-color: #a0d2eb;
         color: white;
       }
       ul {
@@ -15,19 +15,7 @@
         margin: 0;
         padding: 0;
       }
-      li {
-        margin-bottom: 0.5em;
-        margin-top: 0.5em;
-        padding: 1em;
-        border: 1px solid white;
-        transition-property: background-color, color;
-        transition-duration: 500ms;
-        transition-timing-function: ease-in-out;
-      }
-      li:hover {
-        background-color: white;
-        color: black;
-      }
+
       #new-customers form {
         margin-bottom: 0.5em;
         margin-top: 0.5em;
@@ -36,61 +24,366 @@
       }
 
       .popup-body {
-        width: 300px;
-        height: inherit;
-        text-align: center;
-        border: solid 1px;
-        background-color: white;
-        padding: 5px;
+        background-color: #e5eaf5;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: transalte(-50%, -50%);
+        width: 250x;
+        height: 420px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1.5rem;
         display: flex;
         flex-direction: column;
-        border-radius: 5px;
-        z-index: 1;
-        position: absolute;
-        top: calc(50vh - 10px);
-        left: calc(50vw - 10px);
-        color: black;
+        justify-content: center-between;
+        align-items: center;
+
+        animation-name: animatemodal;
+        animation-duration: 0.6s;
+      }
+
+      @keyframes animatemodal {
+        from {
+          top: -300px;
+          opacity: 0;
+        }
+        to {
+          top: 30%;
+          opacity: 1;
+        }
       }
 
       .popup-body div {
         margin: 3px;
+        background: #d0bdf4;
+        border-radius: 5px;
       }
+      .container {
+        background-color: red;
+      }
+     
+      .button-3 {
+        appearance: none;
+        background-color: #8458b3;
+        border: 1px solid rgba(27, 31, 35, 0.15);
+        border-radius: 6px;
+        box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+          sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 6px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+
+      .button-3:focus:not(:focus-visible):not(.focus-visible) {
+        box-shadow: none;
+        outline: none;
+      }
+
+      .button-3:hover {
+        background-color: #494D5F;
+      }
+
+      .button-3:focus {
+        box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
+        outline: none;
+      }
+
+      .button-3:disabled {
+        background-color: #94d3a2;
+        border-color: rgba(27, 31, 35, 0.1);
+        color: rgba(255, 255, 255, 0.8);
+        cursor: default;
+      }
+
+      .button-3:active {
+        background-color:
+        box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+      }
+
+      .form__label {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 0.7rem;
+        margin-bottom: 0.7rem;
+        display: block;
+        transition: all 0.3s;
+        transform: translateY(0rem);
+      }
+
+      .form__input {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        font-size: 1.2rem;
+        margin: 0 auto;
+
+        border-radius: 0.2rem;
+        background-color: rgb(255, 255, 255);
+        border: none;
+        width: 90%;
+        display: block;
+        border-bottom: 0.3rem solid transparent;
+        transition: all 0.3s;
+      }
+
+     
+     
+
+      header, .row-new {
+  display: flex;  
+}
+
+.col-new {
+  flex: 1;       
+}
+
+
+@media screen and (min-width: 768px) {
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+ 
+    form div {
+        width: 100%;
+    }
+    .form>*:nth-child(1),
+    .form>*:nth-child(2),
+    .form>*:nth-child(3),
+    .form>*:nth-child(4),
+    .form>*:nth-child(5){
+        width: 47%;
+    }
+}
+
+input[type="text"] {
+  background-color:#e5eaf5;
+}
+input::placeholder{
+  color: #a28089;
+}
+
+.headDiv {
+  font-family: "Roboto", sans-serif;
+}
+
+li div {
+  border: solid 1px  #a28089;
+}
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+/* body{
+    font-family: Helvetica;
+    -webkit-font-smoothing: antialiased;
+    background: rgba( 71, 147, 227, 1);
+} */
+h2{
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: purple;
+    padding: 30px 0;
+}
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.fl-table {
+    border-radius: 5px;
+    font-size: 1px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: #8458B3;
+    font-family: "Roboto", sans-serif;
+}
+
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 14px;
+}
+
+.fl-table thead th {
+    color: #ffffff;
+    background:#494D5F;
+}
+
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #494D5F;
+}
+
+.fl-table tr:nth-child(even) {
+    background: #5D3F6A;
+}
+
+/* Responsive */
+
+@media (max-width: 767px) {
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: red;
+        padding: 0 0 10px;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 60px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 120px;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background:  #f8f8
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+
+
     </style>
   </head>
   <body>
-    <div id="new-customers">
-      <h1>New Customer</h1>
-      <form name="formNewCustomer">
-        <label>
-          Customer Id
-          <input type="text" id="customer_id" />
-
-          <label>
-            Name
-            <input type="text" id="name" />
-          </label>
-          <label>
-            Email
-            <input type="text" id="email" />
-          </label>
-          <label>
-            Town
-            <input type="text" id="town" />
-          </label>
-          <label>
-            Country
-            <input type="text" id="country" />
-          </label>
+    <!-- <div id="new-customers"> -->
+   <div class="headDiv"> <h1>New Customer</h1></div>
+  
+    <form name="formNewCustomer">
+      <label class="form__label">
+    
+        <input class="form__input" type="text" id="customer_id" placeholder="Customer Id" />
+      </label>
+        <label class="form__label">
+      
+          <input class="form__input" type="text" id="name" placeholder="Name" />
         </label>
-        <button type="submit">Add</button>
-      </form>
-    </div>
-    <div>
-      <h1>Customers</h1>
-      <ul></ul>
-    </div>
-    <script src="app.js"></script>
-    <script src="logic.js"></script>
+        <label class="form__label">
+     
+          <input class="form__input" type="text" id="email" placeholder="Email" />
+        </label>
+      </div>
+        
+        <label class="form__label">
+        
+          <input class="form__input" type="text" id="town" placeholder="Town" />
+        </label>
+        <label class="form__label">
+          
+          <input class="form__input" type="text" id="country" placeholder="Country"/>
+        </label>
+      </label>
+     
+      
+      <button class="button-3" type="submit">Add</button>
+    
+    </form>
+  
+
+    <div class="headDiv"><h1>Customers</h1></div>
+
+  
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Customer Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Town</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+            <!-- <td>Content 1</td>
+            <td>Content 1</td>
+            <td>Content 1</td>
+            <td>Content 1</td>
+            <td>Content 1</td> -->
+      
+        
+        <tbody>
+    </table>
+</div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./logic.js"></script>
     <!-- <script src="logic.js"></script> -->
   </body>
 </html>

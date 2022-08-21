@@ -1928,7 +1928,7 @@ exports.makeUpdate = makeUpdate;
 exports.remove = remove;
 exports.removePopupHandler = removePopupHandler;
 
-var _app = require("./app.js");
+var _index = require("./index.js");
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -1995,7 +1995,7 @@ function _makeUpdate() {
               country: document.querySelector("#country-" + id).value
             };
             _context2.next = 3;
-            return (0, _app.updateUser)(customer);
+            return (0, _index.updateUser)(customer);
 
           case 3:
             response = _context2.sent;
@@ -2027,7 +2027,7 @@ function removePopupHandler(event) {
     }
   }
 }
-},{"./app.js":"app.js"}],"app.js":[function(require,module,exports) {
+},{"./index.js":"index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2096,7 +2096,7 @@ exports.makePopup = makePopup;
 
 var createCustomer = function createCustomer(item) {
   //console.log(item);
-  console.log("The is from hot reload");
+  console.log("The is from hot reloaddddd");
   var customerElement = document.createElement("li");
   var link = document.createElement("p");
   var linkIt = document.createTextNode(""); // link.appendChild(linkIt);
@@ -2387,7 +2387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57906" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51905" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -2563,5 +2563,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+//# sourceMappingURL=/front-end.e31bb0bc.js.map

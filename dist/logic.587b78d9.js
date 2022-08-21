@@ -1917,7 +1917,7 @@ module.exports.default = axios;
 
 },{"./utils":"node_modules/axios/lib/utils.js","./helpers/bind":"node_modules/axios/lib/helpers/bind.js","./core/Axios":"node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"node_modules/axios/lib/core/mergeConfig.js","./defaults":"node_modules/axios/lib/defaults.js","./cancel/Cancel":"node_modules/axios/lib/cancel/Cancel.js","./cancel/CancelToken":"node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"node_modules/axios/lib/cancel/isCancel.js","./helpers/spread":"node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"node_modules/axios/lib/helpers/isAxiosError.js"}],"node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"app.js":[function(require,module,exports) {
+},{"./lib/axios":"node_modules/axios/lib/axios.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1957,21 +1957,22 @@ var getCustomerItems = /*#__PURE__*/function () {
           case 3:
             response = _context.sent;
             customerItems = response.data;
-            console.log(response.data);
+            customerItems.join(",hkh ");
+            console.log(customerItems);
             console.log("Customer list", customerItems);
             return _context.abrupt("return", customerItems);
 
-          case 10:
-            _context.prev = 10;
+          case 11:
+            _context.prev = 11;
             _context.t0 = _context["catch"](0);
             console.error(_context.t0);
 
-          case 13:
+          case 14:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 10]]);
+    }, _callee, null, [[0, 11]]);
   }));
 
   return function getCustomerItems() {
@@ -1985,14 +1986,14 @@ exports.makePopup = makePopup;
 
 var createCustomer = function createCustomer(item) {
   //console.log(item);
-  console.log("The is from hot reload");
+  console.log("The is from hot reloaddddd");
   var customerElement = document.createElement("li");
   var link = document.createElement("p");
   var linkIt = document.createTextNode(""); // link.appendChild(linkIt);
   // link.title = "This is Link Test";
   // link.href = "./updateCustomer.html";
+  // customerElement.appendChild(link);
 
-  customerElement.appendChild(link);
   customerElement.id = item.customer_id;
   customerElement.appendChild(document.createTextNode(item.customer_id));
   customerElement.appendChild(document.createTextNode(item.name));
@@ -2014,15 +2015,13 @@ var createCustomer = function createCustomer(item) {
 exports.createCustomer = createCustomer;
 
 var updateCustomerList = function updateCustomerList(customerItems) {
-  customerItems;
   var customerList = document.querySelector("ul");
+  console.log(customerList);
   console.log(Array.isArray(customerItems));
 
   if (Array.isArray(customerItems) && customerItems.length > 0) {
     customerItems.map(function (customerItem) {
       // console.log(customerItem);
-      console.log(customerItem);
-      console.log(customerItem);
       customerList.appendChild(createCustomer(customerItem));
     });
   } else if (customerItems) {
@@ -2176,7 +2175,8 @@ formUpdateCustomer.addEventListener("submit", /*#__PURE__*/function () {
   return function (_x3) {
     return _ref5.apply(this, arguments);
   };
-}()); ////// Update customer
+}());
+console.log("all good here"); ////// Update customer
 
 function updateUser(_x4) {
   return _updateUser.apply(this, arguments);
@@ -2260,7 +2260,7 @@ exports.makeUpdate = makeUpdate;
 exports.remove = remove;
 exports.removePopupHandler = removePopupHandler;
 
-var _app = require("./app.js");
+var _index = require("./index.js");
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -2327,7 +2327,7 @@ function _makeUpdate() {
               country: document.querySelector("#country-" + id).value
             };
             _context2.next = 3;
-            return (0, _app.updateUser)(customer);
+            return (0, _index.updateUser)(customer);
 
           case 3:
             response = _context2.sent;
@@ -2359,7 +2359,7 @@ function removePopupHandler(event) {
     }
   }
 }
-},{"./app.js":"app.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./index.js":"index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2387,7 +2387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56853" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51905" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

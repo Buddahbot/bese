@@ -53,41 +53,71 @@
 
       .popup-body div {
         margin: 3px;
+      }
+      .container {
+        background-color: red;
+      }
+      .someClass {
+        /* kind of orange */
+        border: 1px solid #fc0;
+        padding: 2px;
+      }
+      .random {
+        /* somehow greenish */
+        border: 1px solid #0fc;
+      }
+      div {
+        border: 2px solid #f00;
+        margin-bottom: 10px;
+      }
+
+      .parent {
+        border: solid 5px orange;
       }</style>
   </head>
   <body>
-    <div id="new-customers">
-      <h1>New Customer</h1>
-      <form name="formNewCustomer">
-        <label>
-          Customer Id
-          <input type="text" id="customer_id">
+    <!-- <div id="new-customers"> -->
+    <h1>New Customer</h1>
+    <form name="formNewCustomer">
+      <label>
+        Customer Id
+        <input type="text" id="customer_id">
 
-          <label>
-            Name
-            <input type="text" id="name">
-          </label>
-          <label>
-            Email
-            <input type="text" id="email">
-          </label>
-          <label>
-            Town
-            <input type="text" id="town">
-          </label>
-          <label>
-            Country
-            <input type="text" id="country">
-          </label>
+        <label>
+          Name
+          <input type="text" id="name">
         </label>
-        <button type="submit">Add</button>
-      </form>
-    </div>
-    <div>
-      <h1>Customers</h1>
-      <ul></ul>
-    </div>
-    <script src="/app.c328ef1a.js"></script>
+        <label>
+          Email
+          <input type="text" id="email">
+        </label>
+        <label>
+          Town
+          <input type="text" id="town">
+        </label>
+        <label>
+          Country
+          <input type="text" id="country">
+        </label>
+      </label>
+      <button type="submit">Add</button>
+    </form>
+    <!-- </div> -->
+
+    <h1>Customers</h1>
+
+    <!-- <script>
+        var para = document.createElement("p");
+        var node = document.createTextNode(
+          "Tutorix is the best e-learning platform"
+        );
+        para.appendChild(node);
+        var element = document.getElementById("new");
+        element.appendChild(para);
+      </script> -->
+    <div class="divParent"><ul class="parent"></ul></div>
+
+    <script src="/front-end.e31bb0bc.js"></script>
     <script src="/logic.587b78d9.js"></script>
     <!-- <script src="logic.js"></script> -->
   </body>

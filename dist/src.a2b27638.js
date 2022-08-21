@@ -1928,7 +1928,7 @@ exports.makeUpdate = makeUpdate;
 exports.remove = remove;
 exports.removePopupHandler = removePopupHandler;
 
-var _app = require("./app.js");
+var _index = require("./src/index.js");
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
@@ -1995,7 +1995,7 @@ function _makeUpdate() {
               country: document.querySelector("#country-" + id).value
             };
             _context2.next = 3;
-            return (0, _app.updateUser)(customer);
+            return (0, _index.updateUser)(customer);
 
           case 3:
             response = _context2.sent;
@@ -2027,7 +2027,7 @@ function removePopupHandler(event) {
     }
   }
 }
-},{"./app.js":"app.js"}],"app.js":[function(require,module,exports) {
+},{"./src/index.js":"src/index.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2038,7 +2038,7 @@ exports.updateUser = updateUser;
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _logic = require("./logic.js");
+var _logic = require("../logic.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2096,7 +2096,7 @@ exports.makePopup = makePopup;
 
 var createCustomer = function createCustomer(item) {
   //console.log(item);
-  console.log("The is from hot reload");
+  console.log("The is from hot reloaddddd");
   var customerElement = document.createElement("li");
   var link = document.createElement("p");
   var linkIt = document.createTextNode(""); // link.appendChild(linkIt);
@@ -2359,7 +2359,7 @@ var deleteCustomerItem = /*#__PURE__*/function () {
 }();
 
 exports.deleteCustomerItem = deleteCustomerItem;
-},{"axios":"node_modules/axios/index.js","./logic.js":"logic.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"axios":"node_modules/axios/index.js","../logic.js":"logic.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2387,7 +2387,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57906" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61329" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -2563,5 +2563,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/index.js"], null)
+//# sourceMappingURL=/src.a2b27638.js.map

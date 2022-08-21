@@ -1,44 +1,49 @@
-import { updateUser } from "./app.js";
+import { updateUser } from "./index.js";
+import { deleteCustomer } from "./index.js";
 
 export function createPopup(customer_id, item) {
   if (!customer_id) return;
   let html = `<div class="popup-body" id="popup-${customer_id}">
     <div>
-      <button name="cancel-${customer_id}">X</button>
+    <button class="button-3" name="cancel-${customer_id}">X</button>
     </div>
     <div>
-      <label>
+      <label class="form__label">
         Name
-        <input type="text" id="name-${customer_id}" value="${item.name}" />
+        <input class="form__input" type="text" id="name-${customer_id}" value="${item.name}" />
       </label>
     </div>
     <div>
-      <label>
+      <label class="form__label">
         Email
-        <input type="text" id="email-${customer_id}" value="${item.email}" />
+        <input class="form__input" type="text" id="email-${customer_id}" value="${item.email}" />
       </label>
     </div>
     <div>
-      <label>
+      <label class="form__label">
         Town
-        <input type="text" id="town-${customer_id}" value="${item.town}" />
+        <input class="form__input" type="text" id="town-${customer_id}" value="${item.town}" />
       </label>
     </div>
     <div>
-      <label>
+      <label class="form__label">
         Country
-        <input type="text" id="country-${customer_id}" value="${item.country}" />
+        <input class="form__input" type="text" id="country-${customer_id}" value="${item.country}" />
       </label>
     </div>
 
     <div>
-      <button name="cancel-${customer_id}">Cancel</button>
-      <button id="update-customer-${customer_id}">Update</button>
+      <button class="button-3" name="cancel-${customer_id}">Cancel</button>
+      <button class="button-3" id="update-customer-${customer_id}">Update</button>
+      <button class="button-3" id="delete-customer-${customer_id}">Delete</button>
     </div>
     </div>`;
+
+  //// put in a div
   let popupHolder = document.createElement("div");
   popupHolder.innerHTML = html;
 
+  ///// remove elements from popup form
   document.body.appendChild(popupHolder);
   document.getElementsByName("cancel-" + customer_id).forEach((elem) => {
     elem.addEventListener("click", (event) => {
@@ -46,13 +51,24 @@ export function createPopup(customer_id, item) {
     });
   });
 
+  //// Add eventlistener for update button
   document.body.appendChild(popupHolder);
   document
     .querySelector("#update-customer-" + customer_id)
     .addEventListener("click", async (event) => {
       await makeUpdate(customer_id);
+      location.reload();
     });
 
+  //// Delete customer
+  document
+    .querySelector("#delete-customer-" + customer_id)
+    .addEventListener("click", async (e) => {
+      await deleteCustomer(customer_id);
+      location.reload();
+    });
+
+  ///// Clear window of popup when clicking outside popup
   window.addEventListener("click", removePopupHandler, { capture: true });
 }
 
@@ -66,7 +82,7 @@ export async function makeUpdate(id) {
   };
 
   let response = await updateUser(customer);
-  console.log(response.data);
+  console.log(response);
 }
 
 export function remove(id) {
